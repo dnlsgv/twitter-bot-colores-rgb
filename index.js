@@ -15,7 +15,7 @@ var T = new Twit({
 setInterval(function(){
 	generarImagen();
 	tweetearImagen();
-}, 1000 * 60 * 5);
+}, 1000 * 60 * 60);
 
 function tweetear()
 {
