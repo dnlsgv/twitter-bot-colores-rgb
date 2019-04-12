@@ -14,8 +14,8 @@ var T = new Twit({
 
 setInterval(function(){
 	generarImagen();
-	tweetear();
-}, 1000 * 20);
+	tweetearImagen();
+}, 1000 * 60);
 
 function tweetear()
 {
@@ -30,6 +30,32 @@ function tweetear()
 	  	console.log("Tweet enviado.");
 	  }
 	});	
+}
+
+function tweetearImagen()
+{
+	var archivo = './imagen-colores-random.png';
+	var params = {
+		encoding: 'base64'
+	};
+
+	var contenidob64 = fs.readFileSync(archivo, params);
+	T.post('media/upload', { media_data: contenidob64 }, function(err, data, response){
+		var id = data.media_id_string;
+		var data = {
+			status: `#randomcolor`,
+			media_ids: [id]
+		}
+
+	T.post('statuses/update', data, function(err, data, response) {
+	  // console.log(data)
+		if(!err)
+		{
+		console.log("Tweet enviado.");
+		}
+		});	
+
+	});
 }
 
 function generarImagen()
