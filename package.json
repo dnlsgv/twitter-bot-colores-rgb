@@ -9,6 +9,7 @@
   "author": "Daniel Segovia",
   "license": "ISC",
   "dependencies": {
+    "canvas": "^2.4.1",
     "dotenv": "^7.0.0",
     "twit": "^2.2.11"
   }
