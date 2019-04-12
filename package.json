@@ -1,0 +1,14 @@
+{
+  "name": "twitter-bot-colores-rgb",
+  "version": "1.0.0",
+  "description": "Twitter bot que postea imagenes de colores RGB distintos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Segovia",
+  "license": "ISC",
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
