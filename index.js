@@ -12,6 +12,8 @@ var T = new Twit({
   // strictSSL:            true,     // optional - requires SSL certificates to be valid.
 });
 
+var colorGenerado = '';
+
 setInterval(function(){
 	generarImagen();
 	tweetearImagen();
@@ -43,7 +45,7 @@ function tweetearImagen()
 	T.post('media/upload', { media_data: contenidob64 }, function(err, data, response){
 		var id = data.media_id_string;
 		var data = {
-			status: `#randomcolor`,
+			status: `${colorGenerado} #randomcolor`,
 			media_ids: [id]
 		}
 
@@ -64,7 +66,8 @@ function generarImagen()
 	const contexto = canvas.getContext('2d');
 
 	var colores = generarColoresAleatorios();
-	contexto.fillStyle = `rgb(${colores[0]}, ${colores[1]}, ${colores[2]})`;
+	colorGenerado = `rgb(${colores[0]}, ${colores[1]}, ${colores[2]})`;
+	contexto.fillStyle = colorGenerado;
 	contexto.fillRect(0, 0, 400, 400);
 
 	var buf = canvas.toBuffer();
