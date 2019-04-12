@@ -1,3 +1,5 @@
 # twitter-bot-colores-rgb
 
-Work in progress
+En twitter: @dvvbot1
+
+[https://twitter.com/dvvbot1](https://twitter.com/dvvbot1)
